@@ -9,7 +9,7 @@ const props = defineProps({
 });
 
 function getImageUrl(img) {
-  return new URL(`./src/assets/${img}`, "http://127.0.0.1:5173").href;
+  return new URL(`./src/assets/${img}`, window.location.origin).href;
 }
 
 console.log(import.meta);
