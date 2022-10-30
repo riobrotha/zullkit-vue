@@ -7,6 +7,12 @@ const props = defineProps({
   subtitle: String,
   column: String,
 });
+
+function getImageUrl(img) {
+  return new URL(`./src/assets/${img}`, "http://127.0.0.1:5173").href;
+}
+
+console.log(import.meta);
 </script>
 
 <template>
@@ -17,7 +23,7 @@ const props = defineProps({
           <img
             :alt="props.title"
             class="block w-full h-auto"
-            :src="'./src/assets/' + props.img"
+            :src="getImageUrl(props.img)"
           />
         </div>
       </router-link>
